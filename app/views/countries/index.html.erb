@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <ul>
+    <% @countries_join.each do |country| %>
+      <li>  
+        <p> <%=  country.name %>  = <%=  country.state_name %> </p>
+      </li>
+    <% end %>
+    </ul>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Country', new_country_path %>
