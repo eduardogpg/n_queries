@@ -1,0 +1,12 @@
+ <% country_name = "" %>
+
+  <% @countries_join.each do |country| %>
+    <% if country_name != country.name %>
+      <% country_name = country.name %>
+      <p>  <%= country_name %> </p>  
+    <% end %>
+
+    <ul>
+      <li>  <%=  country.state_name %> </li>
+    </ul>
+  <% end %>

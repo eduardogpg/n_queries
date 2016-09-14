@@ -13,18 +13,14 @@
   <tbody>
     <ul>
       
-      <% country_name = "" %>
-
-      <% @countries_join.each do |country| %>
-        <% if country_name != country.name %>
-          <% country_name = country.name %>
-          <p>  <%= country_name %> </p>  
+     <% @countries.each do |country| %>
+      <p> <%= country.name %> </p>
+      <ul>
+        <% country.states.each do |state|%>
+          <li>  <%= state.name %> </li>
         <% end %>
-
-        <ul>
-          <li>  <%=  country.state_name %> </li>
-        </ul>
-      <% end %>
+      </ul>
+    <% end %>
 
     </ul>
   </tbody>
