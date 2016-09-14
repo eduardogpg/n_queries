@@ -12,11 +12,20 @@
 
   <tbody>
     <ul>
-    <% @countries_join.each do |country| %>
-      <li>  
-        <p> <%=  country.name %>  = <%=  country.state_name %> </p>
-      </li>
-    <% end %>
+      
+      <% country_name = "" %>
+
+      <% @countries_join.each do |country| %>
+        <% if country_name != country.name %>
+          <% country_name = country.name %>
+          <p>  <%= country_name %> </p>  
+        <% end %>
+
+        <ul>
+          <li>  <%=  country.state_name %> </li>
+        </ul>
+      <% end %>
+
     </ul>
   </tbody>
 </table>

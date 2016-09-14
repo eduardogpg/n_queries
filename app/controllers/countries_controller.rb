@@ -4,7 +4,7 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
-    #@countries = Country.all
+    @countries = Country.all
     @countries_join = Country.get_state
   end
 
